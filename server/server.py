@@ -1,5 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
+
 from utils import get_location_names, get_estimation
 
 
@@ -10,6 +14,7 @@ def get_locations():
         'locations': get_location_names()
     }) 
     response.headers.add('Access-Control-Allow-Origin', '*')
+    print(response)
     return response
 
 # Returns the prediction from the house.
