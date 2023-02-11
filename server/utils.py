@@ -4,12 +4,12 @@ import warnings
 warnings.filterwarnings('ignore')
 
 def load_pickle():
-    with open(r'server\model\banglore_home_prices_model.pickle', 'rb') as f:
+    with open(r'./model/banglore_home_prices_model.pickle', 'rb') as f:
         model = pickle.load(f)
         return model
 
 def load_columns():
-    with open(r'server\model\columns.json', 'r') as f:
+    with open(r'./model/columns.json', 'r') as f:
         data = json.load(f)
         locations = list(data.values())
         return locations
